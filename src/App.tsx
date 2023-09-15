@@ -12,8 +12,8 @@ export function App() {
   };
   
   return (
-    <div className='min-h-screen flex flex-col'>
-      <div className="px-6 pv-3 flex items-center justify-between border-b">
+    <div className='min-h-screen flex flex-col'> {/* min-h-scr: 100vh, fiv ocupa a tela toda*/}
+      <div className="px-6 pv-3 flex items-center justify-between border-b"> {/* border b: button width*/}
         <h1 className="text-xl font-bold">upload.ai</h1>
 
         <div className=" flex items-center gap-3">
@@ -40,14 +40,15 @@ export function App() {
             <Textarea 
             className='resize-none p-4 leading-relaxed'
             placeholder='Resultado gerado pela IA...' readOnly
-            />
-
+            /> {/* resize-none: user não consegue redimensionar o bloco / leading-relax: line height 160%, ideal para textos um abaixo do outro / readonly: texto não editável*/}
 
           </div>
           <p className='text-sm text-muted-foreground'>Lembre-se: você pode usar a variável <code className='text-violet-400'>{'{transcription}'}</code> no seu prompt para adicionar o conteúdo da transcrição do vídeo selecionado.
-          </p>
+          </p> {/* txt-sm: texto pequeno / txt-muted-f: ideal para aplicação light-dark mode e deixa menos opaco*/}
         </div>
-        <aside className='w-80'></aside>
+        <aside className='w-80 space-y-6'> {/* space y: 24px entre cada elemento dentro da div*/}
+
+        </aside>
       </main>
     </div>
     
