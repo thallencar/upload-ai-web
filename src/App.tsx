@@ -61,11 +61,11 @@ export function App() {
             <input type='file' id='video' accept='video/mp4' className='sr-only'/> {/* dá pra carregar vídeo pela label através input video, por isso esconderei o input (sr-only*/}
 
             <Separator/>
-            <div className='space-y-1'>
+            <div className='space-y-2'>
               <Label htmlFor='transcription_prompt'>Prompt de transcrição</Label>
               <Textarea 
                 id='transcription_prompt' 
-                className='min-h-20 leading-relaxed'
+                className='h-20 leading-relaxed resize-none'
                 placeholder='Inclua palavras chave mencionadas no vídeo, separadas por vírgula.'
                 /> 
             </div>
@@ -74,6 +74,12 @@ export function App() {
               Carregar Vídeo
               <Upload className='w-4 h-4 ml-2'/>
             </Button>
+          </form>
+
+          <Separator/>
+
+          <form className='space-y-6'>
+            <div className='space-y-2'></div>
           </form>
         </aside>
       </main>
