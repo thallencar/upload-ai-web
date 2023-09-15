@@ -1,4 +1,4 @@
-import {Github} from 'lucide-react'
+import { Github, FileVideo } from 'lucide-react'
 import { Button } from "./components/ui/button";
 import { Separator } from '@radix-ui/react-separator';
 import { Textarea } from './components/ui/textarea';
@@ -43,10 +43,23 @@ export function App() {
             /> {/* resize-none: user não consegue redimensionar o bloco / leading-relax: line height 160%, ideal para textos um abaixo do outro / readonly: texto não editável*/}
 
           </div>
-          <p className='text-sm text-muted-foreground'>Lembre-se: você pode usar a variável <code className='text-violet-400'>{'{transcription}'}</code> no seu prompt para adicionar o conteúdo da transcrição do vídeo selecionado.
-          </p> {/* txt-sm: texto pequeno / txt-muted-f: ideal para aplicação light-dark mode e deixa menos opaco*/}
+            <p className='text-sm text-muted-foreground'>Lembre-se: você pode usar a variável <code className='text-violet-400'>{'{transcription}'}</code> no seu prompt para adicionar o conteúdo da transcrição do vídeo selecionado.
+            </p> {/* txt-sm: texto pequeno / txt-muted-f: ideal para aplicação light-dark mode e deixa menos opaco*/}
         </div>
+
         <aside className='w-80 space-y-6'> {/* space y: 24px entre cada elemento dentro da div*/}
+          <form className='space-y-6'>
+            <label 
+              htmlFor='video'
+              className='border flex rounded-md aspect-video cursor-pointer border-dashed text-sm flex-col gap-2 items-center justify-center text-muted-foreground hover:bg-primary/10' 
+            > {/* rouded-md: seta a border / aspect-video: faz com que o elemento respeite o padrão de dimensionamento (16:9) / cursor-pointer: muda o cursor / border-dashed: pontilhado na borda*/}
+              <FileVideo className='w-4 h-4'/>
+              Selecione um Vídeo
+            </label>
+
+            <input type='file' id='video' accept='video/mp4' className='sr-only'/> {/* dá pra carregar vídeo pela label através input video, por isso esconderei o input (sr-only*/}
+
+          </form>
 
         </aside>
       </main>
