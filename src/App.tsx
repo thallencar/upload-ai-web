@@ -4,6 +4,7 @@ import { Separator } from '@radix-ui/react-separator';
 import { Textarea } from './components/ui/textarea';
 import { Label } from '@radix-ui/react-label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/ui/select';
+import { Slider } from './components/ui/slider';
 
 export function App() {
 
@@ -90,8 +91,23 @@ export function App() {
                   <SelectItem value='gpt3.5'>GPT 3.5-turbo 16k</SelectItem>
                 </SelectContent>
               </Select>
-              <span className='block text-sm text-muted-foreground italic'>Você poderá customizar essa opção em breve!</span>
+              <span className='block text-sm text-muted-foreground italic'>Você poderá customizar essa opção em breve!
+              </span>
             </div>
+
+            <Separator/>
+            <div className='space-y-4'>
+              <Label>Temperatura</Label>
+              
+              <span className='block text-sm text-muted-foreground italic'>Valores mais altos tendem a deixar o resultado mais criativo, mas com possíveis erros.
+              </span>
+              <Slider
+              min={0}
+              max={2}
+              step={0.1}
+              />
+            </div>
+
           </form>
         </aside>
       </main>
