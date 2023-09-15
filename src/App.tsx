@@ -2,6 +2,7 @@ import { Github, FileVideo } from 'lucide-react'
 import { Button } from "./components/ui/button";
 import { Separator } from '@radix-ui/react-separator';
 import { Textarea } from './components/ui/textarea';
+import { Label } from '@radix-ui/react-label';
 
 export function App() {
 
@@ -59,6 +60,15 @@ export function App() {
 
             <input type='file' id='video' accept='video/mp4' className='sr-only'/> {/* dá pra carregar vídeo pela label através input video, por isso esconderei o input (sr-only*/}
 
+            <Separator/>
+            <div className='space-y-1'>
+              <Label htmlFor='transcription_prompt'>Prompt de transcrição</Label>
+              <Textarea 
+                id='transcription_prompt' 
+                className='min-h-20 leading-relaxed'
+                placeholder='Inclua palavras chave mencionadas no vídeo, separadas por vírgula.'
+                /> 
+            </div>
           </form>
 
         </aside>
