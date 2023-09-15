@@ -1,4 +1,4 @@
-import { Github, FileVideo , Upload} from 'lucide-react'
+import { Github, FileVideo , Upload, Wand2} from 'lucide-react'
 import { Button } from "./components/ui/button";
 import { Separator } from '@radix-ui/react-separator';
 import { Textarea } from './components/ui/textarea';
@@ -81,6 +81,18 @@ export function App() {
           <Separator/>
 
           <form className='space-y-6'>
+          <div className='space-y-2'>
+              <Label>Prompt</Label>
+              <Select>
+                <SelectTrigger>
+                  <SelectValue placeholder='Selecione um prompt...'/>
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value='title'>Título do YouTube</SelectItem>
+                  <SelectItem value='description'>Descrição do YouTube</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
             <div className='space-y-2'>
               <Label>Modelo</Label>
               <Select disabled defaultValue='gpt3.5'>
@@ -108,6 +120,12 @@ export function App() {
               />
             </div>
 
+            <Separator/>
+
+            <Button type='submit' className='w-full'>
+              Executar
+              <Wand2 className='w-4 h-4 ml-2'/>
+            </Button>
           </form>
         </aside>
       </main>
